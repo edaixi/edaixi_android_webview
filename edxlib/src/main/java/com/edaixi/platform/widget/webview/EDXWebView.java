@@ -3,6 +3,7 @@ package com.edaixi.platform.widget.webview;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Environment;
 import android.util.AttributeSet;
 import android.view.View;
@@ -38,7 +39,13 @@ public class EDXWebView extends BridgeWebView {
 
         webviewProgressbar = new ProgressBar(context, null, android.R.attr.progressBarStyleHorizontal);
         webviewProgressbar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 12, 0, 0));
-        webviewProgressbar.setProgressDrawable(getResources().getDrawable(R.drawable.progress_horizontal_holo_light));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webviewProgressbar.setProgressDrawable(getResources().getDrawable(R.drawable.progress_horizontal_holo_light,mContex.getTheme()));
+        } else {
+            webviewProgressbar.setProgressDrawable(getResources().getDrawable(R.drawable.progress_horizontal_holo_light));
+        }
+
         addView(webviewProgressbar);
 
         WebSettings webSettings = getSettings();
