@@ -1,9 +1,5 @@
-### Webview组件
-#### Feature
-##### 1.实现Native与JavaScript通信桥
-##### 2.网页加载进度条
-##### 3.网页JavaScript alert提示框
-##### 4.自动获取加载网页的Title，可通过事件(EventBus)传递给调用者设置标题
+### 自定义Webview
+##### 网页加载进度条
 
 ##### 代码引用
 ```java

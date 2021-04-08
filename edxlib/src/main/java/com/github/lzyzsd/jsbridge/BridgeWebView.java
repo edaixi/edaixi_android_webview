@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.edaixi.platform.widget.webview.PageTitleEvent;
-import com.edaixi.platform.widget.webview.TelEvent;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -21,8 +19,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import de.greenrobot.event.EventBus;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
@@ -277,7 +273,7 @@ public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
 			}else  if(url.startsWith("tel:")){
 				String tel=url.substring("tel:".length());
 
-				EventBus.getDefault().post(new TelEvent(tel));
+//				EventBus.getDefault().post(new TelEvent(tel));
 				return true;
 			}
 
@@ -309,9 +305,9 @@ public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
 
 			//设置网页title
 //			Toast.makeText(context, view.getTitle(), Toast.LENGTH_SHORT).show();
-			PageTitleEvent pageEvent = new PageTitleEvent();
-			pageEvent.setTitle(view.getTitle());
-			EventBus.getDefault().post(pageEvent);
+//			PageTitleEvent pageEvent = new PageTitleEvent();
+//			pageEvent.setTitle(view.getTitle());
+//			EventBus.getDefault().post(pageEvent);
 		}
 
 		@Override
