@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EDXWebView webview = (EDXWebView) findViewById(R.id.edxWebview);
-        webview.loadUrl("http://www.163.com");
+        webview.loadUrl("http://www.baidu.com");
     }
 }
